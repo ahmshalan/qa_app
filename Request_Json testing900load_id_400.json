@@ -1,0 +1,147 @@
+{
+  "request": {
+    "data": {
+      "refid": "440",
+      "docs": [
+        {
+          "docid": "Financial Statements",
+          "docLoc": "TFRT FS TESTING.pdf"
+        }
+      ],
+      "questions": [
+        {
+          "quesID": "3",
+          "question": "1. Search for words \u0022financial year ended\u0022\n2. If \u0022financial year ended\u0022 is 31st December, then populate this value as 1st January. If \u0022financial year ended\u0022 is 31st March, then populate this value as 1st April"
+        },
+        {
+          "quesID": "4",
+          "question": "1. Search for words \u0022financial year ended\u0022\n2. If \u0022financial year ended\u0022 is 31st December, then populate this value as 31st December. If \u0022financial year ended\u0022 is 31st March, then populate this value as 31st March"
+        },
+        {
+          "quesID": "5",
+          "question": "1. Is there currency in the data provided \n2. Populate the currency mentioned "
+        },
+        {
+          "quesID": "6",
+          "question": "\n1. Is there any consolidated financial statement in the data provided\n2. If yes, then populate value as \u0022Yes\u0022"
+        },
+        {
+          "quesID": "7",
+          "question": "\n1. Is there any consolidated financial statement in the data provided, give answer yes/ no\n2. If no, then look for any Acceptable or Authorised Financial Accounting Standard in the data provided and populate the same. This will help in clarifying whether it is consolidated or not."
+        },
+        {
+          "quesID": "8",
+          "question": "\n1. Is there any ordinary share issue in the data provided?\n2. If yes, populate value as \u0022Yes\u0022"
+        },
+        {
+          "quesID": "9",
+          "question": "\nIs there any ordinary share issue in the data provided?\nIf yes, view to be provided of that page reference"
+        },
+        {
+          "quesID": "10",
+          "question": "1. In the Financial Statement, look for keyword \u0022Profit \u0026 Loss Statement\u0022\n2. In the proft \u0026 loss statement, look for keyword \u0022profir after tax\u0022 and give me the value"
+        },
+        {
+          "quesID": "11",
+          "question": "1. In the Financial Statement, look for keyword \u0022Profit \u0026 Loss Statement\u0022\n2. In the proft \u0026 loss statement, look for keyword \u0022current tax expense\u0022 or \u0022current tax\u0022 and give me the value 1. In the Financial Statement, look for keyword \u0022Profit \u0026 Loss Statement\u0022\n2. In the proft \u0026 loss statement, look for keyword \u0022deferred tax expense\u0022 or \u0022deferred tax\u0022 and give me the value In the Financial statement/ Notes to Accounts , look for keyword \u0022PE\u0022 or \u0022permanent establishment\u0022 then look for \u0022tax attributable to PE\u0022 and give me value of \u0022tax attributable to PE\u0022"
+        },
+        {
+          "quesID": "14",
+          "question": "1. In the Financial Statement, look for keyword \u0022Profit \u0026 Loss Statement\u0022\n2. In the proft \u0026 loss statement, look for keyword \u0022dividend income received\u0022 and give me answer yes/ no"
+        },
+        {
+          "quesID": "15",
+          "question": "1. In the Financial Statement, look for keyword \u0022Profit \u0026 Loss Statement\u0022\n2. In the proft \u0026 loss statement, look for keyword \u0022gain/loss on investment \u0022 or \u0022gain or loss on securities\u0022 and give me answer yes/ no"
+        },
+        {
+          "quesID": "16",
+          "question": "1. In the Financial Statement, look for keyword \u0022Profit \u0026 Loss Statement\u0022\n2. In the proft \u0026 loss statement, look for keyword \u0022gain/loss on revaluation of fixed assets \u0022 or \u0022gain/loss on revaluation of Property, plant \u0026 equipment or PPE\u0022 and give me answer yes/ no"
+        },
+        {
+          "quesID": "17",
+          "question": "1. In the financial Statement , look for keywords \u0022merger or demerger or reorganisation\u0022, give me the details"
+        },
+        {
+          "quesID": "18",
+          "question": "1. In the Financial Statement, look for keyword \u0022tax functional currency\u0022 and give me the value\n"
+        },
+        {
+          "quesID": "19",
+          "question": "1. In the Financial Statement, look for keyword \u0022Profit \u0026 Loss Statement\u0022\u0022\n2. In the proft \u0026 loss statement, look for keyword \u0022illegal payment, fines, penalties\u0022 and give me answer yes/ no\u0022"
+        },
+        {
+          "quesID": "20",
+          "question": "1. In the Financial Statement, look for keyword \u0022prior period errors\u0022 and give me values "
+        },
+        {
+          "quesID": "21",
+          "question": "1. In the Financial Statement, look for keyword \u0022changes in accounting policy\u0022 and give me values "
+        },
+        {
+          "quesID": "22",
+          "question": "1. In the Financial Statement, look for keyword \u0022Profit \u0026 Loss Statement\u0022\u0022\n2. In the proft \u0026 loss statement, look for keyword \u0022defined benefit pension plan\u0022 or \u0022pension contribution\u0022 and give me answer \u0022yes/ no\u0022\n3. Give me values of \u0022contribution\u0022 and \u0022payment\u0022 seperately"
+        },
+        {
+          "quesID": "23",
+          "question": "1. In the Financial Statement, look for keyword \u0022Profit \u0026 Loss Statement\u0022\u0022\n2. In the proft \u0026 loss statement, look for keyword \u0022debt waive off\u0022 or \u0022credit waived\u0022 and give me answer \u0022yes/ no\u0022"
+        },
+        {
+          "quesID": "24",
+          "question": "1. In the Financial Statement, look for keyword \u0022intrgroup interest payment or received\u0022 give me Yes/ no\n2. Give the details of payment / receipt"
+        },
+        {
+          "quesID": "25",
+          "question": "1. In the Financial Statement, look for keyword \u0022stock based compensation expense\u0022 give me Yes/ no\n2. Give the values of stock based compensation expense"
+        },
+        {
+          "quesID": "26",
+          "question": "1. In the Financial Statement, look for keyword \n\u0022Profit \u0026 Loss Statement\u0022\n2. In the proft \u0026 loss statement, look for keyword \u0022gain/ loss on fair value method\u0022 or \u0022gain/ loss on impairment accounting\u0022 give me Yes/ no\n2. Give the values of gain / loss"
+        },
+        {
+          "quesID": "27",
+          "question": "1. In the Financial Statement, look for keyword \n\u0022Profit \u0026 Loss Statement\u0022\n2. In the proft \u0026 loss statement, look for keyword \u0022gain/ loss on sale of asset\u0022 give me Yes/ no\n2. Give the values of gain / loss"
+        },
+        {
+          "quesID": "28",
+          "question": "In the Financial Statement/ Notes to Accounts, look for keyword -\u0022Related party transaction\u0022 and give me answer as Yes/ No"
+        },
+        {
+          "quesID": "29",
+          "question": "In the Financial Statement/ Notes to Accounts, look for keyword -\u0022Related party transaction\u0022 and give me answer as Yes/ No"
+        },
+        {
+          "quesID": "30",
+          "question": "In the Financial Statement/ Notes to Accounts, look for keyword -\u0022Related party transaction\u0022 and give me answer as Yes/ No"
+        },
+        {
+          "quesID": "31",
+          "question": "In the Financial Statement/ Notes to Accounts, look for keyword -\u0022Related party transaction\u0022 and give me answer as Yes/ No"
+        },
+        {
+          "quesID": "32",
+          "question": "In the Financial Statement/ Notes to Accounts, look for keyword -\u0022Related party transaction\u0022 and give me answer as Yes/ No"
+        },
+        {
+          "quesID": "33",
+          "question": "In the Financial Statement/ Notes to Accounts, look for keyword -\u0022Related party transaction\u0022 and give me answer as Yes/ No"
+        },
+        {
+          "quesID": "34",
+          "question": "1. In the financial statement, look for the schedule/note \u0022income tax expense\u0022, \u0022Tax on profit\u0022 \n\n2. In the schedule \u0022income tax expense\u0022, \u0022Tax on profit\u0022 look for the keyword \u0022provision for uncertain tax liability\u0022 \u0022provision for unfavourable tax positions\u0022, \u0022reserve for uncertain tax liability\u0022, \u0022reserve for uncertain tax positions\u0022 give me the answer yes/no."
+        },
+        {
+          "quesID": "36",
+          "question": "1. In the Financial Statement, look for keyword \u0022Balance Sheet\u0022\n\n2. In the Balance Sheet look for the keyword \u0022Deferred Tax Liability\u0022 and give me the answer yes/no."
+        },
+        {
+          "quesID": "37",
+          "question": "1. In the financial statement, look for the keyword \u0022statement of changes in equity\u0022\n\n2. In the statement of changes in equity look for the keyword \u0022dividend distributed\u0022, \u0022dividend paid\u0022 and give me the answer as yes/no."
+        },
+        {
+          "quesID": "38",
+          "question": "1. In the financial statement, look for the schedule/note \u0022income tax expense\u0022, \u0022Tax on profit\u0022 \n\n2. In the said note look for keywords such as , \u0022deferred tax not been recognised\u0022, \u0022not probable future tax profit will be available\u0022 and give me the answer as yes/no."
+        }
+      ]
+    }
+  }
+}

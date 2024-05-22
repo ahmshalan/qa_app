@@ -1,0 +1,344 @@
+[
+  {
+    "questionId": 1,
+    "documentId": "Tax Returns",
+    "questionText": "1. Is there tax functional currency in the data provided ?\n2. If yes, then Populate what is the Tax Functional currency",
+    "questionField": "Tax functional currency",
+    "questionTextLocation": "Constituent Entity.B9",
+    "answerTextLocation": "Constituent Entity.C9",
+    "answerRegex": "^[€£$]?[0-9]{1,3}(?:,[0-9]{3})*(?:\\.[0-9]{1,2})?$"
+  },
+  {
+    "questionId": 2,
+    "documentId": "Tax Returns",
+    "questionText": "1. Is there tax identification number (TIN) in the data provided ?\n2. If yes, then Populate ",
+    "questionField": "Tax identification number \"TIN\"",
+    "questionTextLocation": "Constituent Entity.B10",
+    "answerTextLocation": "Constituent Entity.C10",
+    "answerRegex": "^(\\d{3}-\\d{2}-\\d{4}|\\d{9})$"
+  },
+  {
+    "questionId": 3,
+    "documentId": "Financial Statements",
+    "questionText": "1. Search for words \"financial year ended\"\n2. If \"financial year ended\" is 31st December, then populate this value as 1st January. If \"financial year ended\" is 31st March, then populate this value as 1st April",
+    "questionField": "Fiscal year (start date)",
+    "questionTextLocation": "Constituent Entity.B12",
+    "answerTextLocation": "Constituent Entity.C12",
+    "answerRegex": "^[a-zA-Z0-9\\s._]+$"
+  },
+  {
+    "questionId": 4,
+    "documentId": "Financial Statements",
+    "questionText": "1. Search for words \"financial year ended\"\n2. If \"financial year ended\" is 31st December, then populate this value as 31st December. If \"financial year ended\" is 31st March, then populate this value as 31st March",
+    "questionField": "Fiscal year (end date)",
+    "questionTextLocation": "Constituent Entity.B13",
+    "answerTextLocation": "Constituent Entity.C13",
+    "answerRegex": "^[a-zA-Z0-9\\s._]+$"
+  },
+  {
+    "questionId": 5,
+    "documentId": "Financial Statements",
+    "questionText": "1. Is there currency in the data provided \n2. Populate the currency mentioned ",
+    "questionField": "Reporting currency (i.e. Accounting functional currency)",
+    "questionTextLocation": "Constituent Entity.B14",
+    "answerTextLocation": "Constituent Entity.C14",
+    "answerRegex": "st^[€£$]?[0-9]{1,3}(?:,[0-9]{3})*(?:\\.[0-9]{1,2})?$ring"
+  },
+  {
+    "questionId": 6,
+    "documentId": "Financial Statements",
+    "questionText": "\n1. Is there any consolidated financial statement in the data provided\n2. If yes, then populate value as \"Yes\"",
+    "questionField": "Is a package of Consolidated Financial Statements (FS) (before any consolidation adjustments eliminating intra-group transactions) available for the entity?",
+    "questionTextLocation": "Consolidated FS.B5",
+    "answerTextLocation": "Consolidated FS.C5",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 7,
+    "documentId": "Financial Statements",
+    "questionText": "\n1. Is there any consolidated financial statement in the data provided, give answer yes/ no\n2. If no, then look for any Acceptable or Authorised Financial Accounting Standard in the data provided and populate the same. This will help in clarifying whether it is consolidated or not.",
+    "questionField": "If the response to question 2 above is \"No\", please input the accounting standard for the available stand-alone FS (e.g. USGAAP etc.).",
+    "questionTextLocation": "Consolidated FS.B6",
+    "answerTextLocation": "Consolidated FS.C6",
+    "answerRegex": "^[a-zA-Z0-9\\s._]+$"
+  },
+  {
+    "questionId": 8,
+    "documentId": "Financial Statements",
+    "questionText": "\n1. Is there any ordinary share issue in the data provided?\n2. If yes, populate value as \"Yes\"",
+    "questionField": "Did the entity issue other shares or financial instruments which were not ordinary shares?",
+    "questionTextLocation": "Consolidated FS.B10",
+    "answerTextLocation": "Consolidated FS.C10",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 9,
+    "documentId": "Financial Statements",
+    "questionText": "\nIs there any ordinary share issue in the data provided?\nIf yes, view to be provided of that page reference",
+    "questionField": "If the response to the question above is \"Yes\", please input the nature of the share or financial instrument (e.g. redeemable preference shares, preferred stock etc)",
+    "questionTextLocation": "Consolidated FS.B11",
+    "answerTextLocation": "Consolidated FS.C11",
+    "answerRegex": "^[a-zA-Z0-9\\s._]+$"
+  },
+  {
+    "questionId": 10,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"Profit & Loss Statement\"\n2. In the proft & loss statement, look for keyword \"profir after tax\" and give me the value",
+    "questionField": "Financial Accounting Net income (loss) after tax \"FANIL\"  before the adjustment\")　(+) profit;(-) loss",
+    "questionTextLocation": "GloBE Income.B4",
+    "answerTextLocation": "GloBE Income.C4",
+    "answerRegex": "^[€£$]?[0-9]{1,3}(?:,[0-9]{3})*(?:\\.[0-9]{1,2})?$"
+  },
+  {
+    "questionId": 11,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"Profit & Loss Statement\"\n2. In the proft & loss statement, look for keyword \"current tax expense\" or \"current tax\" and give me the value 1. In the Financial Statement, look for keyword \"Profit & Loss Statement\"\n2. In the proft & loss statement, look for keyword \"deferred tax expense\" or \"deferred tax\" and give me the value In the Financial statement/ Notes to Accounts , look for keyword \"PE\" or \"permanent establishment\" then look for \"tax attributable to PE\" and give me value of \"tax attributable to PE\"",
+    "questionField": "Net Tax Expenses",
+    "questionTextLocation": "GloBE Income.B5",
+    "answerTextLocation": "GloBE Income.C5",
+    "answerRegex": "^[€£$]?[0-9]{1,3}(?:,[0-9]{3})*(?:\\.[0-9]{1,2})?$"
+  },
+  {
+    "questionId": 12,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"Profit & Loss Statement\"\n2. In the proft & loss statement, look for keyword \"deferred tax expense\" or \"deferred tax\" and give me the value",
+    "questionField": "Net Tax Expenses",
+    "questionTextLocation": "GloBE Income.d5",
+    "answerTextLocation": "GloBE Income.c5",
+    "answerRegex": "^[€£$]?[0-9]{1,3}(?:,[0-9]{3})*(?:\\.[0-9]{1,2})?$"
+  },
+  {
+    "questionId": 13,
+    "documentId": "Financial Statements",
+    "questionText": "In the Financial statement/ Notes to Accounts , look for keyword \"PE\" or \"permanent establishment\" then look for \"tax attributable to PE\" and give me value of \"tax attributable to PE\"",
+    "questionField": "Net Tax Expenses",
+    "questionTextLocation": "GloBE Income.d6",
+    "answerTextLocation": "GloBE Income.c6",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 14,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"Profit & Loss Statement\"\n2. In the proft & loss statement, look for keyword \"dividend income received\" and give me answer yes/ no",
+    "questionField": "Did the entity receive dividends from any investment securities (e.g. shares or equity interests), regardless of whether it was from group or non-group entities?",
+    "questionTextLocation": "GloBE Income.B6",
+    "answerTextLocation": "GloBE Income.C6",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 15,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"Profit & Loss Statement\"\n2. In the proft & loss statement, look for keyword \"gain/loss on investment \" or \"gain or loss on securities\" and give me answer yes/ no",
+    "questionField": "Did the entity recognise any loss or gain in P/L in relation to any investment securities (e.g. shares or equity interests), including investments in subsidiaries?",
+    "questionTextLocation": "GloBE Income.B7",
+    "answerTextLocation": "GloBE Income.C7",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 16,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"Profit & Loss Statement\"\n2. In the proft & loss statement, look for keyword \"gain/loss on revaluation of fixed assets \" or \"gain/loss on revaluation of Property, plant & equipment or PPE\" and give me answer yes/ no",
+    "questionField": "Did the entity use the revaluation model (instead of the cost model) as its accounting policy for property, plant and equipment?",
+    "questionTextLocation": "GloBE Income.B8",
+    "answerTextLocation": "GloBE Income.C8",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 17,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the financial Statement , look for keywords \"merger or demerger or reorganisation\", give me the details",
+    "questionField": "Did the entity implement any reorganizations such as mergers, demergers etc during the Fiscal Year?",
+    "questionTextLocation": "GloBE Income.B9",
+    "answerTextLocation": "GloBE Income.C9",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 18,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"tax functional currency\" and give me the value\n",
+    "questionField": "If a different functional currency is used for accounting and local tax purposes, please select \"Yes\". However, if the conversion of accounting functional currency to the tax functional currency in the fiscal year is converted using by the same FX rate throughout the year, such as an average rate, please select \"No\"",
+    "questionTextLocation": "GloBE Income.B10",
+    "answerTextLocation": "GloBE Income.C10",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 19,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"Profit & Loss Statement\"\"\n2. In the proft & loss statement, look for keyword \"illegal payment, fines, penalties\" and give me answer yes/ no\"",
+    "questionField": "Did the entity recognise an expense for illegal payments, including bribes/kickbacks or an expense for fines and penalties that equal or exceed EUR 50,000 or an equivalent amount?",
+    "questionTextLocation": "GloBE Income.B11",
+    "answerTextLocation": "GloBE Income.C11",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 20,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"prior period errors\" and give me values ",
+    "questionField": "Did the entity make changes in its opening equity to correct a prior period error?",
+    "questionTextLocation": "GloBE Income.B12",
+    "answerTextLocation": "GloBE Income.C12",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 21,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"changes in accounting policy\" and give me values ",
+    "questionField": "Did the entity make changes in its opening equity as a result of a change in accounting principle/ policy?",
+    "questionTextLocation": "GloBE Income.B13",
+    "answerTextLocation": "GloBE Income.C13",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 22,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"Profit & Loss Statement\"\"\n2. In the proft & loss statement, look for keyword \"defined benefit pension plan\" or \"pension contribution\" and give me answer \"yes/ no\"\n3. Give me values of \"contribution\" and \"payment\" seperately",
+    "questionField": "Did the entity have the defined benefit pension scheme and contribution to the Pension Fund ?",
+    "questionTextLocation": "GloBE Income.B14",
+    "answerTextLocation": "GloBE Income.C14",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 23,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"Profit & Loss Statement\"\"\n2. In the proft & loss statement, look for keyword \"debt waive off\" or \"credit waived\" and give me answer \"yes/ no\"",
+    "questionField": "Did the entity implement Debt releases? “Debt release” refers to a situation where an amount owing by an entity is waived or forgiven by the creditor without being repaid in full and with the debtor being freed or released from any further obligation to pay the amount.",
+    "questionTextLocation": "GloBE Income.B15",
+    "answerTextLocation": "GloBE Income.C15",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 24,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"intrgroup interest payment or received\" give me Yes/ no\n2. Give the details of payment / receipt",
+    "questionField": "Did the entity make intragroup interest receivable or payments to other group entities?",
+    "questionTextLocation": "GloBE Income.B20",
+    "answerTextLocation": "GloBE Income.C20",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 25,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"stock based compensation expense\" give me Yes/ no\n2. Give the values of stock based compensation expense",
+    "questionField": "Did the entity recognize stock-based compensation expense in its FS or tax return?",
+    "questionTextLocation": "GloBE Income.B21",
+    "answerTextLocation": "GloBE Income.C21",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 26,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \n\"Profit & Loss Statement\"\n2. In the proft & loss statement, look for keyword \"gain/ loss on fair value method\" or \"gain/ loss on impairment accounting\" give me Yes/ no\n2. Give the values of gain / loss",
+    "questionField": "Did the entity recognize any gain or loss resulting from applying the fair value method or impairment accounting in its FS?",
+    "questionTextLocation": "GloBE Income.B22",
+    "answerTextLocation": "GloBE Income.C22",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 27,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \n\"Profit & Loss Statement\"\n2. In the proft & loss statement, look for keyword \"gain/ loss on sale of asset\" give me Yes/ no\n2. Give the values of gain / loss",
+    "questionField": "Did the entity recognize any gain or loss from the disposal of immovable property to a third party?",
+    "questionTextLocation": "GloBE Income.B23",
+    "answerTextLocation": "GloBE Income.C23",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 28,
+    "documentId": "Financial Statements",
+    "questionText": "In the Financial Statement/ Notes to Accounts, look for keyword -\"Related party transaction\" and give me answer as Yes/ No",
+    "questionField": "Is there any transaction between Constituent Entities located in different jurisdictions that is not in recorded in the same amount in the financial accounts and tax at the entity level?",
+    "questionTextLocation": "GloBE Income.B24",
+    "answerTextLocation": "GloBE Income.C24",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 29,
+    "documentId": "Financial Statements",
+    "questionText": "In the Financial Statement/ Notes to Accounts, look for keyword -\"Related party transaction\" and give me answer as Yes/ No",
+    "questionField": "Is there any transaction between Constituent Entities located in different jurisdictions that is subject to bilateral/unilateral APA?",
+    "questionTextLocation": "GloBE Income.B25",
+    "answerTextLocation": "GloBE Income.C25",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 30,
+    "documentId": "Financial Statements",
+    "questionText": "In the Financial Statement/ Notes to Accounts, look for keyword -\"Related party transaction\" and give me answer as Yes/ No",
+    "questionField": "Was there any transaction of sale or other transfer of assets between Constituent Entities located in the same jurisdictions?",
+    "questionTextLocation": "GloBE Income.B26",
+    "answerTextLocation": "GloBE Income.C26",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 31,
+    "documentId": "Financial Statements",
+    "questionText": "In the Financial Statement/ Notes to Accounts, look for keyword -\"Related party transaction\" and give me answer as Yes/ No",
+    "questionField": "Was there any transaction of sale or other transfer of assets with Minority-Owned Constituent Entities or Investment Entities?",
+    "questionTextLocation": "GloBE Income.B27",
+    "answerTextLocation": "GloBE Income.C27",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 32,
+    "documentId": "Financial Statements",
+    "questionText": "In the Financial Statement/ Notes to Accounts, look for keyword -\"Related party transaction\" and give me answer as Yes/ No",
+    "questionField": "Was there any transaction between Constituent Entities located in the same jurisdiction that is not recorded in the same amount in the financial accounts of both Constituent Entities?",
+    "questionTextLocation": "GloBE Income.B28",
+    "answerTextLocation": "GloBE Income.C28",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 33,
+    "documentId": "Financial Statements",
+    "questionText": "In the Financial Statement/ Notes to Accounts, look for keyword -\"Related party transaction\" and give me answer as Yes/ No",
+    "questionField": "Did the entity have any transactions with other Constituent Entities within the same tax group, located in the same jurisdiction, during the fiscal year?",
+    "questionTextLocation": "GloBE Income.B29",
+    "answerTextLocation": "GloBE Income.C29",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 34,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the financial statement, look for the schedule/note \"income tax expense\", \"Tax on profit\" \n\n2. In the schedule \"income tax expense\", \"Tax on profit\" look for the keyword \"provision for uncertain tax liability\" \"provision for unfavourable tax positions\", \"reserve for uncertain tax liability\", \"reserve for uncertain tax positions\" give me the answer yes/no.",
+    "questionField": "Did the entity recognise current tax or deferred tax for uncertain tax positions in standalone accounting for consolidated F/S",
+    "questionTextLocation": "Adjusted Covered Taxes.B3",
+    "answerTextLocation": "Adjusted Covered Taxes.C3",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 35,
+    "documentId": "Computation of Tax",
+    "questionText": "In the computation of tax, look for keyword such as  \"tax credit\", \"refundable tax credits\", qualified refundable tax credit\", \"Marketable Transferable Tax Credits\", \"Non-Marketable Transferable Tax Credit\", \"Non-Qualified Refundable Tax Credit\" and \"previous year refund\" and give me the answer yes/no. ",
+    "questionField": "Did the entity apply a tax credit or refund in the tax calculation?",
+    "questionTextLocation": "Adjusted Covered Taxes.B5",
+    "answerTextLocation": "Adjusted Covered Taxes.C5",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 36,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the Financial Statement, look for keyword \"Balance Sheet\"\n\n2. In the Balance Sheet look for the keyword \"Deferred Tax Liability\" and give me the answer yes/no.",
+    "questionField": "Did the entity recognise deferred tax liabilities?",
+    "questionTextLocation": "Adjusted Covered Taxes.B7",
+    "answerTextLocation": "Adjusted Covered Taxes.C7",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 37,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the financial statement, look for the keyword \"statement of changes in equity\"\n\n2. In the statement of changes in equity look for the keyword \"dividend distributed\", \"dividend paid\" and give me the answer as yes/no.",
+    "questionField": "Did the entity distribute dividends to the parent entity in the fiscal year?",
+    "questionTextLocation": "Adjusted Covered Taxes.B9",
+    "answerTextLocation": "Adjusted Covered Taxes.C9",
+    "answerRegex": "(?i)^(yes|no)$"
+  },
+  {
+    "questionId": 38,
+    "documentId": "Financial Statements",
+    "questionText": "1. In the financial statement, look for the schedule/note \"income tax expense\", \"Tax on profit\" \n\n2. In the said note look for keywords such as , \"deferred tax not been recognised\", \"not probable future tax profit will be available\" and give me the answer as yes/no.",
+    "questionField": "Is there a tax loss for which the deferred tax asset has not been recognised because the recognition criteria is not met (e.g. the tax loss is not expected to be net off against the taxable income )?",
+    "questionTextLocation": "Adjusted Covered Taxes.B10",
+    "answerTextLocation": "Adjusted Covered Taxes.C10",
+    "answerRegex": "(?i)^(yes|no)$"
+  }
+]
