@@ -1,3 +1,7 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import concurrent.futures
 from typing import Optional, List
 from langchain import hub
@@ -7,7 +11,8 @@ from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain.tools import tool
 from langchain_core.pydantic_v1 import BaseModel, Field
-from langchain_core.agents import AgentActionMessageLog, AgentFinish, AgentExecutor
+from langchain.agents import AgentExecutor
+from langchain_core.agents import AgentActionMessageLog, AgentFinish
 from langchain.agents.format_scratchpad import format_to_openai_function_messages
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
@@ -227,7 +232,7 @@ class DocAnswer:
             agent=agent,
             tools=[self.search],
             # handle_parsing_errors=True,
-            verbose=True,
+            # verbose=True,
         )
 
         return agent_executor

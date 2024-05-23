@@ -10,4 +10,5 @@ langchainhub
 PyMuPDF
 unstructured[all-docs]
 mangum
+pysqlite3-binary
 

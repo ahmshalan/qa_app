@@ -1,0 +1,22 @@
+FROM python:3.10-slim-buster
+
+# Set up an alias for python3 as python
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
+# Install the function's dependencies using file requirements.txt
+COPY requirements.txt  .
+
+
+RUN apt-get update && apt-get install gcc -y
+# RUN pip3 install torch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 && pip3 install sentence-transformers==2.2.2 
+RUN pip3 install torch==2.2.1 --index-url https://download.pytorch.org/whl/cpu  && \
+    python -m pip install -r requirements.txt 
+
+
+WORKDIR /app
+COPY . /app
+
+ENV PYTHONUNBUFFERED=1
+
+# Set the CMD to your handler (could also be done as a parameter override outside of the Dockerfile)
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]

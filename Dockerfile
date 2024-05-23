@@ -7,11 +7,10 @@ WORKDIR ${LAMBDA_TASK_ROOT}
 COPY requirements.txt  .
 
 
-RUN yum install file-devel tesseract
+RUN yum install -y file-devel tesseract
 
-RUN pip3 install --no-cache-dir --upgrade pip && \ 
-    pip3 install --no-cache-dir -r requirements.txt
-
+RUN pip3 install torch==2.2.1 --index-url https://download.pytorch.org/whl/cpu  && \
+    python -m pip install -r requirements.txt
 
 COPY . .
 
